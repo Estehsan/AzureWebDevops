@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/Cellar/node/20.0.0/bin/node /Users/estehsan/.yarn/bin/yarn.js install
+
+PATH: 
+  /Users/estehsan/.rvm/gems/ruby-2.7.6/bin:/Users/estehsan/.rvm/gems/ruby-2.7.6@global/bin:/Users/estehsan/.rvm/rubies/ruby-2.7.6/bin:/Users/estehsan/.yarn/bin:/Users/estehsan/.config/yarn/global/node_modules/.bin:/Users/estehsan/.amplify/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/estehsan/Desktop/Driver:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/estehsan/Library/Android/sdk/platform-tools:/Users/estehsan/.rvm/gems/ruby-2.7.6/bin:/Users/estehsan/.rvm/gems/ruby-2.7.6@global/bin:/Users/estehsan/.rvm/rubies/ruby-2.7.6/bin:/Users/estehsan/opt/anaconda3/bin:/Users/estehsan/opt/anaconda3/condabin:/Users/estehsan/.yarn/bin:/Users/estehsan/.config/yarn/global/node_modules/.bin:/Users/estehsan/.amplify/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/path/to/driver:/Users/estehsan/.rvm/bin:/Users/estehsan/.rvm/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  20.0.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/estehsan/Documents/Coders/Devops/AzureWebDevops/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /Users/estehsan/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/estehsan/.yarn/lib/cli.js:310:30)
+      at /Users/estehsan/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
