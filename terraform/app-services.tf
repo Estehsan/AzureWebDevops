@@ -13,10 +13,6 @@ data "azurerm_resource_group" "tf-rg" {
   name = "aznodejsapp-rg"
 }
 
-# data "azurerm_key_vault_secret" "keyvault_secret" {
-#   name         = "azkeyvault202304"
-#   key_vault_id = azurerm_key_vault.tf-key-vault.id
-# }
 
 resource "azurerm_app_service_plan" "tf_app_service_plan" {
   name                = "${var.app_name}-${var.app_environment}-app-service-plan"
