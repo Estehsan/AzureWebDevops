@@ -5,7 +5,13 @@ terraform {
       version = ">= 3.30"
     }
   }
- 
+
+  backend "azurerm" {
+    resource_group_name  = "azurenodejsapplication-rg"
+    storage_account_name = "azurewebapptaskdv"
+    container_name       = "tfbackend"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
@@ -26,7 +32,7 @@ resource "azurerm_storage_account" "tfstate" {
   allow_nested_items_to_be_public = false
 
   tags = {
-    environment = "test"
+    environment = "staging"
   }
 }
 
