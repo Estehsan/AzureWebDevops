@@ -8,8 +8,6 @@
 
 👉 📦 Storage Account
 
-👉 🔒 Container Registry
-
 ### Tools Used
 
 👉 🔨 Terraform

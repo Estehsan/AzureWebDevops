@@ -37,14 +37,6 @@ resource "azurerm_app_service" "tf_app_service" {
   resource_group_name = data.azurerm_resource_group.tf-rg.name
   app_service_plan_id = azurerm_app_service_plan.tf_app_service_plan.id
 
-  # app_settings = {
-  #   DOCKER_REGISTRY_SERVER_URL      = "azacr202304.azurecr.io"
-  #   DOCKER_REGISTRY_SERVER_USERNAME = "azacr202304"
-  #   DOCKER_REGISTRY_SERVER_PASSWORD = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.keyvault_secret.versionless_id})"
-  # }
-  # site_config {
-  #   linux_fx_version = "DOCKER|azacr202304.azurecr.io/azcontainerapp:latest"
-  # }
 
   tags = {
     Name        = "${var.app_name}-app-service"
