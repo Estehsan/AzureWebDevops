@@ -1,10 +1,10 @@
-name: "Terraform Infra Provisioning"
+name: "Terraform backend"
 
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
     paths:
+      - "terraform-backend/**"
       - "terraform/**"
 
 permissions:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    # Use the Bash shell regardless of the GitHub Actions runner's operating system
     defaults:
       run:
         shell: bash
@@ -32,16 +32,34 @@ jobs:
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-      - name: Terraform Init
+      # Initialize the terraform-backend directory
+      - name: Terraform Backend Init
+        working-directory: terraform-backend
         run: terraform init
 
-      # Generates an execution plan for Terraform
-      - name: Terraform Plan
+      # Generates an execution plan for the terraform-backend directory
+      - name: Terraform Backend Plan
+        working-directory: terraform-backend
         run: terraform plan -input=false
 
-        # On push to "main", build or change infrastructure according to Terraform configuration files
-        # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
+      # Apply changes to the terraform-backend directory
+      - name: Terraform Backend Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        working-directory: terraform-backend
+        run: terraform apply -auto-approve -input=false
+
+      # Initialize the terraform directory
+      - name: Terraform Init
+        working-directory: terraform
+        run: terraform init
+
+      # Generates an execution plan for the terraform directory
+      - name: Terraform Plan
+        working-directory: terraform
+        run: terraform plan -input=false
+
+      # Apply changes to the terraform directory
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        working-directory: terraform
         run: terraform apply -auto-approve -input=false
