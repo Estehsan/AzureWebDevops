@@ -18,6 +18,6 @@ terraform {
     key                  = "test.state"
     subscription_id      = "fb121715-e9af-41d9-b113-aae88bed3c6d"
     tenant_id            = "ffa63cad-6366-428d-97c3-019bd2ba9d93"
-    resource_group_name  = "azurenodejsapplication-rg"
+    resource_group_name  = "aznodejsapp-rg"
   }
 }
