@@ -59,6 +59,7 @@ jobs:
         run: terraform plan -input=false
 
       # Apply changes to the terraform directory
+      # Apply changes to the terraform directory
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         working-directory: terraform
