@@ -27,11 +27,6 @@ jobs:
       ARM_SUBSCRIPTION_ID: fb121715-e9af-41d9-b113-aae88bed3c6d
       ARM_USE_OIDC: true
 
-    # default config for all jobs
-    defaults:
-      run:
-        working-directory: ./terraform
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
