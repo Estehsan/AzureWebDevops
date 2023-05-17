@@ -1,6 +1,6 @@
-CONTAINER_NAME=tfbackend
+CONTAINER_NAME=acr15may
 KEY=test.state
-STORAGE_ACCOUNT_NAME=nodejssa202304
+STORAGE_ACCOUNT_NAME=azurewebapptaskdv
 RESOURCE_GROUP_NAME=aznodejsapp-rg
 
 # Create resource group
