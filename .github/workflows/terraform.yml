@@ -7,9 +7,9 @@ on:
       - "terraform-backend/**"
 
 permissions:
-    id-token: write
-    contents: read
-    actions: read
+  id-token: write
+  contents: read
+  actions: read
 
 defaults:
   run:
@@ -17,13 +17,11 @@ defaults:
 
 jobs:
   move_subscription:
-    env:
-      GH_TOKEN: ${{ secrets.AZURE_GITHUB_TOKEN }}  
-        
     name: Terraform Backend Deploy
     runs-on: ubuntu-latest
     environment: Production
     env:
+      GH_TOKEN: ${{ secrets.AZURE_GITHUB_TOKEN }}
       ARM_CLIENT_ID: 971d3ccd-ac89-4422-bad2-62530495ffb6
       ARM_TENANT_ID: ffa63cad-6366-428d-97c3-019bd2ba9d93
       ARM_SUBSCRIPTION_ID: fb121715-e9af-41d9-b113-aae88bed3c6d
