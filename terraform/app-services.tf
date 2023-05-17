@@ -5,13 +5,18 @@ variable "app_name" {
   default = "aznodejsapp"
 }
 
+# Set the default environment to dev
 variable "app_environment" {
   default = "dev"
 }
 
+# Create a Resource Group
+
 data "azurerm_resource_group" "tf_rg" {
   name = "aznodejsapp-rg"
 }
+
+# Create an App Service Plan
 
 resource "azurerm_app_service_plan" "tf_app_service_plan" {
   name                = "${var.app_name}-${var.app_environment}-app-service-plan"
@@ -25,6 +30,8 @@ resource "azurerm_app_service_plan" "tf_app_service_plan" {
     size = "S1"
   }
 }
+
+# Create an App Service
 
 resource "azurerm_app_service" "tf_app_service" {
   name                = "${var.app_name}-${var.app_environment}-service"

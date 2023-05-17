@@ -11,7 +11,7 @@ provider "azurerm" {
   features {}  
 }
 
-# test
+#Terraform code to create a resource group
 
 terraform {
   backend "azurerm" {
