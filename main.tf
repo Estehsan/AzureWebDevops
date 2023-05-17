@@ -14,8 +14,8 @@ provider "azurerm" {
 resource "azurerm_resource_group" "tfstate" {
   name     = "aznodejsapp-rg"
   location = "West Europe"
+# }
 }
-
 resource "azurerm_storage_account" "tfstate" {
   name                     = "azurewebapptaskdv"
   resource_group_name      = azurerm_resource_group.tfstate.name
