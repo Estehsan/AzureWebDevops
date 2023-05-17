@@ -19,7 +19,7 @@ data "azurerm_resource_group" "tf_rg" {
 # Create an App Service Plan
 
 resource "azurerm_app_service_plan" "tf_app_service_plan" {
-  name                = "${var.app_name}-${var.app_environment}-app-service-plan"
+  name                = "${var.app_name}-${var.app_environment}-app-service-plan-rg"
   location            = data.azurerm_resource_group.tf_rg.location
   resource_group_name = data.azurerm_resource_group.tf_rg.name
   kind                = "Linux"
