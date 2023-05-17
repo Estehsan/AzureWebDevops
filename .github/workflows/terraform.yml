@@ -17,9 +17,10 @@ defaults:
 jobs:
   move_subscription:
     env:
-      GH_TOKEN: ${{ secrets.AZURE_GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.AZURE_GITHUB_TOKEN }}    
     name: Terraform Backend Deploy
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
       - name: Checkout
