@@ -1,0 +1,28 @@
+name: Terraform Backend Creation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'terraform-backend/**'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  move_subscription:
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    name: Terraform Backend Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: '{"clientId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID}}"}'
+      - name: Terraform Backend
+        run: bash terraform-backend/scripts/remote_backend_script.sh
