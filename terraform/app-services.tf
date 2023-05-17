@@ -12,8 +12,9 @@ variable "app_environment" {
 
 # Create a Resource Group
 
-data "azurerm_resource_group" "tf_rg" {
+resource "azurerm_resource_group" "tf_rg" {
   name = "aznodejsapp-rg"
+  location = "West Europe"
 }
 
 # Create an App Service Plan
