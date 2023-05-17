@@ -23,4 +23,3 @@ terraform {
     resource_group_name  = "aznodejsapp-rg"
   }
 }
-
