@@ -11,6 +11,8 @@ provider "azurerm" {
   features {}  
 }
 
+# test
+
 terraform {
   backend "azurerm" {
     storage_account_name = "azurewebapptaskdv"
@@ -21,3 +23,4 @@ terraform {
     resource_group_name  = "aznodejsapp-rg"
   }
 }
+
