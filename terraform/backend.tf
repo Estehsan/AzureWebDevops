@@ -11,7 +11,8 @@ provider "azurerm" {
   features {}  
 }
 
-#Terraform code to create a resource group
+
+#Terraform code to create a resource group.
 terraform {
   backend "azurerm" {
     storage_account_name = "azurewebapptaskdv"
