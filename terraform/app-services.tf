@@ -37,5 +37,3 @@ resource "azurerm_app_service" "tf_app_service" {
     Environment = var.app_environment
   }
 }
-
-// tes
